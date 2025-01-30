@@ -15,29 +15,23 @@ class LoginController extends Controller
         return view('auth.login');
     }
     
-    public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
+            public function login(Request $request)
+        {
+            $credentials = $request->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
 
-        if (Auth::attempt($request->only('email', 'password'))) {
-            $user = Auth::user();
-            $token = $user->createToken('auth_token')->plainTextToken;
+            if (Auth::attempt($credentials)) {
+                return redirect()->route('admin.dashboard'); // Redirige vers le dashboard après login
+            }
 
-            return response()->json([
-                'message' => 'Connexion réussie',
-                'user' => $user,
-                'token' => $token
-            ], 200);
+            return back()->withErrors([
+                'email' => 'Email ou mot de passe incorrect.',
+            ]);
+
+
+
+
         }
-
-        return response()->json(['message' => 'Email ou mot de passe incorrect'], 401);
-    }
-
-
-
-
-
 }

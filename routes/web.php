@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,21 @@ Route::post('/register', [RegisterController::class, 'register']);
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+
 Route::get('/dashboard', function () {
     return view('dashboard'); // Assure-toi d'avoir une vue 'dashboard.blade.php'
 })->middleware('auth')->name('dashboard');
+
+
+/* Backend Dashboard Route */
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return view('backend.layout.app'); // Charge le layout principal hey app.blade.php
+    })->name('admin.dashboard');
+});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::resource('products', ProductController::class);
+Route::resource('categories', CategoryController::class);

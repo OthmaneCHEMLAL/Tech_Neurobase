@@ -1,0 +1,73 @@
+/* app.css - Compiled CSS from SCSS */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f6f8;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.dashboard_header {
+    background-color: #3498db;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+.dashboard_header-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dashboard-icon-dropdown {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dashboard-dropdown-menu {
+    display: none;
+}
+
+.dashboard-dropdown-menu.show {
+    display: block;
+}
+
+.dashboard_sidebar {
+    background-color: #2ecc71;
+    color: white;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard_sidebar__logo img {
+    width: 150px;
+}
+
+.dashboard_sidebar__menu {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard_sidebar__menu li {
+    margin: 10px 0;
+}
+
+.dashboard_sidebar__menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
