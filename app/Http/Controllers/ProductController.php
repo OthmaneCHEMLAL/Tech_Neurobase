@@ -55,7 +55,7 @@ class ProductController extends Controller
         'product_name' => $request->input('product_name'),
         'product_description' => $request->input('product_description'),
         'status' => $request->input('status'),
-        'price' => (float) $request->input('price'), // Cast to float or numeric
+         'price' => (float) $request->input('price'),
         'category_id' => $request->input('category_id'),
         'images' => $images,
     ]);
@@ -104,7 +104,7 @@ class ProductController extends Controller
             'product_name' => $request->input('product_name'),
             'product_description' => $request->input('product_description'),
             'status' => $request->input('status'),
-            'price' => (float) $request->input('price'), // Cast to float or numeric
+            'price' => (float) $request->input('price'),
             'category_id' => $request->input('category_id'),
             'images' => $images,
         ]);
