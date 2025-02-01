@@ -23,7 +23,7 @@ class LoginController extends Controller
             ]);
 
             if (Auth::attempt($credentials)) {
-                return redirect()->route('admin.dashboard'); // Redirige vers le dashboard après login
+                return redirect()->route('dashboard.show'); // Redirige vers le dashboard après login
             }
 
             return back()->withErrors([

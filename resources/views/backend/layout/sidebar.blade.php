@@ -1,26 +1,42 @@
-<div id="dashboard_sidebar" class="dashboard_sidebar">
-    <div class="dashboard_sidebar__logo">
-        <img src="{{ asset('/logos/carbon-icon.png') }}" alt="logo">
-    </div>
-
-    <ul class="dashboard_sidebar__menu">
-        <li><a href="{{ route('dashboard.show') }}">Dashboard</a></li>
-        <li class="menu-dropdown">
-            <a href="#">Products</a>
-            <ul>
-                <li><a href="{{ route('products.index') }}">Index</a></li>
-                <li><a href="{{ route('products.create') }}">Create</a></li>
-                
-            </ul>
+<!-- SIDEBAR -->
+<section id="sidebar">
+    <a href="#" class="brand">
+    <img src="{{ asset('/logos/carbon-icon.png') }}" alt="logo" class="logo-image">
+    <span class="text">Neurobase</span>
+    </a>
+    <ul class="side-menu top">
+        <li class="active">
+            <a href="{{ route('dashboard.show') }}">
+                <i class='bx bxs-dashboard bx-sm'></i>
+                <span class="text">Dashboard</span>
+            </a>
         </li>
-
-        <li class="menu-dropdown">
-            <a href="#">Product Category</a>
-            <ul>
-                <li><a href="{{ route('product_categories.index') }}">Index</a></li>
-                <li><a href="{{ route('product_categories.create') }}">Create</a></li>
-                
-            </ul>
+        <li>
+            <a href="{{ route('products.index') }}">
+                <i class='bx bxs-shopping-bag-alt bx-sm'></i>
+                <span class="text">Products</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('product_categories.index') }}">
+                <i class='bx bxs-doughnut-chart bx-sm'></i>
+                <span class="text">Product Category</span>
+            </a>
         </li>
     </ul>
-</div>
+    <ul class="side-menu bottom">
+        <li>
+            <a href="#">
+                <i class='bx bxs-cog bx-sm bx-spin-hover'></i>
+                <span class="text">Settings</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="logout">
+                <i class='bx bx-power-off bx-sm bx-burst-hover'></i>
+                <span class="text">Logout</span>
+            </a>
+        </li>
+    </ul>
+</section>
+<!-- SIDEBAR -->
