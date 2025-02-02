@@ -11,8 +11,11 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth'); // Ensure that only authenticated users can access these actions
+        $this->middleware('auth')->except([
+            'showproducts', 'storeproduct', 'updateproduct', 'destroyproduct' // API functions should be public
+        ]);
     }
+    
 
     // Show the list of products (index)
     public function index()
