@@ -87,5 +87,5 @@ Now your React app will be connected to the Laravel back-end API and you can sta
 
 ---
 
-Well done! You've successfully set up the full-stack project!
+Well done!
 
